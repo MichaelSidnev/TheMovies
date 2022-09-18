@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>The Movies</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table>
+    <h1 align="center"> The Movies </h1>
+    <hr/>
+    <br/>
+      <tr>
+        <th>id</th>
+        <th>Title</th>
+        <th>Release</th>
+      </tr>
+      <tr th:each="movie : ${movies}">
+        <td th:text="${movie.getId()}">1</td>
+        <td th:text="${movie.getName()}">The Shawshank Redemption</td>
+        <td th:text="${movie.getRelease()}">1994</td>
+        
+      </tr>
+    </table>
+  
+ 
+</body>
+</html>
