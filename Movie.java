@@ -1,9 +1,12 @@
 package com.example.TheMovies;
 
+import java.sql.Blob;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -16,14 +19,14 @@ public class Movie {
 	private Integer id;
 
 	@NotNull
-	@Size(min = 1, max = 40)
+	@Size(min = 1, max = 120)
 	private String name;
 
 	@NotNull
-	@Size(min = 4, max = 4)
-	private String release;
+	@Min(1895)
+	private Integer kapibara;
 	
-	private String image;
+	//private Blob image;
 
 	public Integer getId() {
 		return id;
@@ -41,19 +44,19 @@ public class Movie {
 		this.name = name;
 	}
 
-	public String getRelease() {
-		return release;
+	public Integer getKapibara() {
+		return kapibara;
 	}
 
-	public void setRelease(String release) {
-		this.release = release;
+	public void setKapibara(Integer kapibara) {
+		this.kapibara = kapibara;
 	}
 	
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
+//	public Blob getImage() {
+//		return image;
+//	}
+//
+//	public void setImage(Blob image) {
+//		this.image = image;
+//	}
 }

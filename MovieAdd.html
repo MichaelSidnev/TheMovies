@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+<title>The Movies</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+    <body>
+    	<h1 align="center">Add new movie</h1>
+        <form action="#" th:action="@{/main/add}" th:object="${movie}" method="post">
+        	<input type="hidden" th:field="*{id}" />
+          <hr/>
+          <br/>
+            <table>
+                <tr>
+                    <td>Title:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+                </tr>
+                <tr>
+                    <td>Release:</td>
+                    <td><input type="text" th:field="*{kapibara}" /></td>
+                    <td th:if="${#fields.hasErrors('kapibara')}" th:errors="*{kapibara}">Release Error</td>
+                </tr>
+              
+              
+                <tr>
+                  
+                    <td><br/><button type="submit">Add movie</button></td>
+                </tr>
+              
+            </table>
+        </form>
+    </body>
+</html>
