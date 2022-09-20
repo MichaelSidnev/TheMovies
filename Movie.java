@@ -26,7 +26,7 @@ public class Movie {
 	@Min(1895)
 	private Integer kapibara;
 	
-	//private Blob image;
+	private Blob image;
 
 	public Integer getId() {
 		return id;
@@ -52,11 +52,11 @@ public class Movie {
 		this.kapibara = kapibara;
 	}
 	
-//	public Blob getImage() {
-//		return image;
-//	}
-//
-//	public void setImage(Blob image) {
-//		this.image = image;
-//	}
+	public Blob getImage() {
+		return image;
+	}
+
+	public void setImage(Blob image) {
+		this.image = image;
+	}
 }

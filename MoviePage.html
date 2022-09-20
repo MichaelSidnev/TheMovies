@@ -5,15 +5,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+     
 	 <h1 align="center"> <p th:text="${movie.getName()}"/> </h1>
 	 <hr/>
-    <br/>
     
+    <a href="/main"><button>Back to main page</button></a>
+    <br/>
 	<a th:href="@{/main/movie(id=${movie.getId})}"</a>
-	
-    <p th:text="'id: '+ ${movie.getId()}" />
+	<p th:text="'id: '+ ${movie.getId()}" />
     <p th:text="'Name: ' + ${movie.getName()}" />
     <p th:text="'Release: ' + ${movie.getKapibara()}" />
+    <img src="${movie.getImage()}" width="30px" height="50px" title="Logo de Good Thymes" alt="Logo de Good Thymes" />
 	
 </body>
 </html>

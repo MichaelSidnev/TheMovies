@@ -8,7 +8,8 @@
 	<table>
     <h1 align="center"> The Movies </h1>
     <hr/>
-    <a th:href="@{/main/edit}"><button type="submit">Add new movie</button><br><br></a>  
+    <a th:href="@{/main/edit}"><button type="submit">Add new movie</button><br><br></a>
+      
       <tr>
         <th>id</th>
         <th>Title</th>
@@ -16,9 +17,13 @@
       </tr>
       <tr th:each="movie : ${movies}">
         <td th:text="${movie.getId()}">1</td>
-        <td <a th:text="${movie.getName()}"</td>
-				th:href="@{/main/movie(id=${movie.getId()})}">Test User</a>
+        <td > <a th:text="${movie.getName()}" href="MoviePage.html" th:href="@{/main/movie(id=${movie.getId})}"> name</td></a>
         <td th:text="${movie.getKapibara()}">1994</td>
+        <td style="text-align: left;">
+				<form action="#" th:action="@{/delete(id=${movie.getId()})}" method="post">
+					<button type="submit">Delete</button>
+				</form>
+			</td>
       </tr>
     </table>
 </body>

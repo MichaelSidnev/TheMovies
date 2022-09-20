@@ -29,14 +29,14 @@ public class MainPageController {
 	}
 
 	@PostMapping(path = "/main/addApi") // Map ONLY POST Requests
-	public @ResponseBody String addNewMovie(@RequestParam String name, @RequestParam Integer kapibara) {
+	public @ResponseBody String addNewMovie(@RequestParam String name, @RequestParam Integer kapibara, Blob image) {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
 
 		Movie n = new Movie();
 		n.setName(name);
 		n.setKapibara(kapibara);
-		//n.setImage(image);
+		n.setImage(image);
 		movieRepository.save(n);
 		return "Saved";
 	}
