@@ -26,15 +26,14 @@
         </tr>
         <tr>
             <td>Poster:</td>
-            <td><form enctype="multipart/form-data" method="post">
-                <p><input type="file" name="f">
-            </form></td>
-            
+            <form action="/upload" enctype="multipart/form-data" method="post">
+            <td><p><input type="file" name="photo" multiple accept="image/jpeg"></td>
         </tr>
         <tr>
-            <td>
+            <td><br/>
                 <button type="submit">Save</button>
             </td>
+			</form>
         </tr>
 </table>
 </form>
