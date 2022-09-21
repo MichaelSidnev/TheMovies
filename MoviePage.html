@@ -14,8 +14,8 @@
 	<a th:href="@{/main/movie(id=${movie.getId})}"</a>
 	<p th:text="'id: '+ ${movie.getId()}" />
     <p th:text="'Name: ' + ${movie.getName()}" />
-    <p th:text="'Release: ' + ${movie.getKapibara()}" />
-    <img src="${movie.getImage()}" width="30px" height="50px" title="Logo de Good Thymes" alt="Logo de Good Thymes" />
+    <p th:text="'Release: ' + ${movie.getPremiere()}" />
+    <img th:src="@{/main/movieImage(id=${movie.getId})}" width="300px" height="500px" title="Logo de Good Thymes" alt="Logo de Good Thymes" />
 	
 </body>
 </html>

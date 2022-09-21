@@ -1,41 +1,48 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>The Movies</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
-<h1 align="center">Add new movie</h1>
-<hr/>
-<a href="/main">
-    <button>Back to main page</button>
-</a>
-<table>
-    <br/><br/>
-    <form action="#" th:action="@{/main/add}" th:object="${movie}" method="post">
-        <input type="hidden" th:field="*{id}"/>
-        <tr>
-            <td>Title:</td>
-            <td><input type="text" th:field="*{name}"/></td>
-            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
-        </tr>
-        <tr>
-            <td>Release:</td>
-            <td><input type="text" th:field="*{kapibara}"/></td>
-            <td th:if="${#fields.hasErrors('kapibara')}" th:errors="*{kapibara}">Release Error</td>
-        </tr>
-        <tr>
-            <td>Poster:</td>
-            <form action="/upload" enctype="multipart/form-data" method="post">
-            <td><p><input type="file" name="photo" multiple accept="image/jpeg"></td>
-        </tr>
-        <tr>
-            <td><br/>
-                <button type="submit">Save</button>
-            </td>
+	<head>
+		<title>The Movies</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	</head>
+	<body>
+		<h1 align="center">Add new movie</h1>
+		<hr/>
+		<a href="/main">
+			<button>Back to main page</button>
+		</a>
+		<table>
+			<br/>
+			<br/>
+			<form th:action="@{/main/addApi}" th:object="${movie}" method="post" enctype="multipart/form-data">
+				<input type="hidden" th:field="*{id}"/>
+				<tr>
+					<td>Title:</td>
+					<td>
+						<input type="text" th:field="*{name}"/>
+					</td>
+					<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+				</tr>
+				<tr>
+					<td>Release:</td>
+					<td>
+						<input type="text" th:field="*{premiere}"/>
+					</td>
+					<td th:if="${#fields.hasErrors('premiere')}" th:errors="*{premiere}">Release Error</td>
+				</tr>
+				<tr>
+					<td>Poster:</td>
+					<td><input type="file" name="file" id="fileImage" multiple accept="image/jpeg"/></td>
+					<td>
+						<img id="thumbnail" alt="Poster Preview"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br/>
+						<button type="submit">Save</button>
+					</td>
+				</tr>
 			</form>
-        </tr>
-</table>
-</form>
-</body>
+		</table>
+	</body>
 </html>
