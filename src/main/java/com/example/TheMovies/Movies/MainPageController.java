@@ -70,7 +70,7 @@ public class MainPageController {
 	public String showForm(Movie movie) {
 		return "MovieAdd";
 	}
-	
+
 	@GetMapping("/main/user/edit")
 	public String showForm(User user) {
 		return "UserEdit";
@@ -84,7 +84,12 @@ public class MainPageController {
 
 		movieRepository.save(movie);
 		return "redirect:/main/movie?id=" + movie.getId();
+		
 	}
+	userRepository.save(user);
+	return "redirect:/main/user?id=" + user.getId();
+	
+}
 
 	@PostMapping("/delete")
 	public String deleteMovie(@RequestParam(name = "id", required = true) int id) {
