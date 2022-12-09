@@ -13,7 +13,7 @@
 		<table>
 			<br/>
 			<br/>
-			<form th:action="@{/main/addApi}" th:object="${movie}" method="post" enctype="multipart/form-data">
+			<form th:action="@{/main/user/addApi}" th:object="${movie}" method="post" enctype="multipart/form-data">
 				<input type="hidden" th:field="*{id}"/>
 				<tr>
 					<td>Name</td>

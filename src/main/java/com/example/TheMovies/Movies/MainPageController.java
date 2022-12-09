@@ -37,6 +37,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.TheMovies.Users.User;
+
 @Controller
 public class MainPageController {
 
@@ -67,6 +69,11 @@ public class MainPageController {
 	@GetMapping("/main/edit")
 	public String showForm(Movie movie) {
 		return "MovieAdd";
+	}
+	
+	@GetMapping("/main/user/edit")
+	public String showForm(User user) {
+		return "UserEdit";
 	}
 
 	@PostMapping("/main/add")
