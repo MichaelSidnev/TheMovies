@@ -1,4 +1,4 @@
-package com.example.TheMovies.Users;
+package com.example.TheMovies.Movies;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

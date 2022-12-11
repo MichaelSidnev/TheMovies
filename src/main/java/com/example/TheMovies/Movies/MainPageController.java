@@ -37,8 +37,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.TheMovies.Users.User;
-
 @Controller
 public class MainPageController {
 
@@ -71,11 +69,6 @@ public class MainPageController {
 		return "MovieAdd";
 	}
 
-	@GetMapping("/main/user/edit")
-	public String showForm(User user) {
-		return "UserEdit";
-	}
-
 	@PostMapping("/main/add")
 	public String addMovie(@Valid Movie movie, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
@@ -84,12 +77,7 @@ public class MainPageController {
 
 		movieRepository.save(movie);
 		return "redirect:/main/movie?id=" + movie.getId();
-		
 	}
-	userRepository.save(user);
-	return "redirect:/main/user?id=" + user.getId();
-	
-}
 
 	@PostMapping("/delete")
 	public String deleteMovie(@RequestParam(name = "id", required = true) int id) {
