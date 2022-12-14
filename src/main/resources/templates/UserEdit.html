@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>The Movies</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	</head>
+	<body>
+		<h1 align="center">Registration</h1>
+		<hr/>
+		<a href="/main">
+			<button>Back to main page</button>
+		</a>
+		<table>
+			<br/>
+			<br/>
+			<form th:action="@{/main/user/addApi}" th:object="${user}" method="post" enctype="multipart/form-data">
+				<input type="hidden" th:field="*{id}"/>
+				<tr>
+					<td>Name</td>
+					<td>
+						<input type="text" th:field="*{name}"/>
+					</td>
+					<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td>
+						<input type="text" th:field="*{email}"/>
+					</td>
+					<td th:if="${#fields.hasErrors('Email')}" th:errors="*{Email}">Email Error</td>
+				</tr>
+				<tr>
+					<td>
+						<br/>
+						<button type="submit">Save</button>
+					</td>
+				</tr>
+			</form>
+		</table>
+	</body>
+</html>

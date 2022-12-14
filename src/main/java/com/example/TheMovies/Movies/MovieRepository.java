@@ -1,4 +1,4 @@
-package com.example.TheMovies;
+package com.example.TheMovies.Movies;
 
 import org.springframework.data.repository.CrudRepository;
 
